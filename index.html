@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade Calculator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+    }
+    .container {
+        max-width: 500px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    #grades-form {
+        margin-top: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+    }
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+    }
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #result {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 30px;
+        color: #007bff;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Grade Calculator</h1>
+    <form id="grades-form">
+        <label for="grade1">Grade 1:</label>
+        <input type="number" id="grade1" required>
+        <label for="grade2">Grade 2:</label>
+        <input type="number" id="grade2" required>
+        <label for="grade3">Grade 3:</label>
+        <input type="number" id="grade3" required>
+        <label for="grade4">Grade 4:</label>
+        <input type="number" id="grade4" required>
+        <label for="grade5">Grade 5:</label>
+        <input type="number" id="grade5" required>
+        <input type="submit" value="Calculate Average">
+    </form>
+    <div id="result"></div>
+</div>
+
+<script>
+    document.getElementById('grades-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var grade1 = parseFloat(document.getElementById('grade1').value);
+        var grade2 = parseFloat(document.getElementById('grade2').value);
+        var grade3 = parseFloat(document.getElementById('grade3').value);
+        var grade4 = parseFloat(document.getElementById('grade4').value);
+        var grade5 = parseFloat(document.getElementById('grade5').value);
+        
+        var average = (grade1 + grade2 + grade3 + grade4 + grade5) / 5;
+        
+        document.getElementById('result').innerText = "Average Grade: " + average.toFixed(2);
+    });
+</script>
+
+</body>
+</html>
